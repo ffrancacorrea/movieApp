@@ -30,7 +30,7 @@ export default function Search(props) {
         <React.Fragment>
             <form className="form" onSubmit={searchMovies}>
                 <input className="input" type="text" name="query"
-                    placeholder="Movie Name" ref={inputRef}
+                    placeholder="Search" ref={inputRef}
                     value={query} onChange={(e) => setQuery(e.target.value)}
                     />
                 <button className="button" type="submit">Search</button>
