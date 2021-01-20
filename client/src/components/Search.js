@@ -36,7 +36,7 @@ export default function Search(props) {
                 <button className="button" type="submit">Search</button>
             </form>
             <div className="cards">
-                {movies.map(movie => (
+                {movies.filter(movie => movie.poster_path).map(movie => (
                     <div className="card" key={movie.id}>
                         <img className="card__image"
                             src={`${poster_w185}${movie.poster_path}`}
