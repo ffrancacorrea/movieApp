@@ -1,8 +1,12 @@
 import React from 'react'
+import Popular from './Popular'
 
 export default function Cards(props) {
+    const api_key = props.api_key;
     const movies = props.movies;
     const poster_w185 = props.poster_w185;
+    const showPopular = props.showPopular;
+    console.log(showPopular);
     return (
         <React.Fragment>
             <div className="cards">
@@ -18,6 +22,8 @@ export default function Cards(props) {
                     </div>
                 ))}
             </div>    
+            { showPopular ? <Popular api_key={api_key} poster_w185={poster_w185}/> : null }
+            
         </React.Fragment>
     )
 }

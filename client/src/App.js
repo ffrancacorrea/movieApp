@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header'
-import Popular from './components/Popular'
 
 class App extends Component {
   
@@ -31,7 +30,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header api_key={this.state.api_key} poster_w185={this.state.poster_w185}/>
-        <Popular api_key={this.state.api_key} poster_w185={this.state.poster_w185}/>
       </div>
     );
   }

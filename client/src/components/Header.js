@@ -8,6 +8,7 @@ export default function Header(props) {
   const inputRef = useRef();
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
+  const [showPopular, setPopular] = useState(true);
     
     useEffect(() => {
         inputRef.current.focus();
@@ -26,6 +27,7 @@ export default function Header(props) {
             }
             setMovies(all_data);
             console.log(all_data);
+            setPopular(false)
         }catch(err){
             console.error(err);
         }
@@ -45,7 +47,7 @@ export default function Header(props) {
       </header>
       <h1 className="main_title">Movie Search</h1>
       
-      <Cards movies={movies} poster_w185={poster_w185} />
+      <Cards movies={movies} poster_w185={poster_w185} api_key={api_key} showPopular={showPopular} />
       </React.Fragment>
   )
 }
