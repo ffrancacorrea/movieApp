@@ -9,19 +9,25 @@ export default function Cards(props) {
     console.log(showPopular);
     return (
         <React.Fragment>
+        { !showPopular ? 
+            
+       <div className="cards__wrapper">
+            <h1 className="main_title">Search Result</h1>
             <div className="cards">
-                {movies.filter(movie => movie.poster_path).map(movie => (
-                    <div className="card" key={movie.id}>
-                        <img className="card__image"
-                            src={`${poster_w185}${movie.poster_path}`}
-                            alt="poster"/>
-                            
-                        <div className="card__description">
-                            <h2>{movie.original_title}</h2>
-                        </div>
+            {movies.filter(movie => movie.poster_path).map(movie => (
+                <div className="card" key={movie.id}>
+                    <img className="card__image"
+                        src={`${poster_w185}${movie.poster_path}`}
+                        alt="poster"/>
+                        
+                    <div className="card__description">
+                        <h2>{movie.original_title}</h2>
                     </div>
-                ))}
-            </div>    
+                </div>
+            ))}
+            </div> 
+       </div>
+        : null }   
             { showPopular ? <Popular api_key={api_key} poster_w185={poster_w185}/> : null }
             
         </React.Fragment>

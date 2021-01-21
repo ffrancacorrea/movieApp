@@ -27,16 +27,16 @@ export default function Header(props) {
             }
             setMovies(all_data);
             console.log(all_data);
-            setPopular(false)
+            setPopular(false);
         }catch(err){
             console.error(err);
         }
     }
     
-
   return (
     <React.Fragment>
-      <header className="navbar">
+      <header className={ showPopular ? "navbar navbar__end" : "navbar" }  >
+      { !showPopular ? <button className="popular__btn" onClick={() => setPopular(true)}>Popular</button> : null }
         <form className="search__form" onSubmit={searchMovies}>
             <input className="search__input" type="text" name="query"
                     placeholder="Search" ref={inputRef}
@@ -45,7 +45,6 @@ export default function Header(props) {
             <button className="search__button" type="submit"> <img src={searchIcon} alt="search-icon"></img> </button>
         </form>
       </header>
-      <h1 className="main_title">Movie Search</h1>
       
       <Cards movies={movies} poster_w185={poster_w185} api_key={api_key} showPopular={showPopular} />
       </React.Fragment>

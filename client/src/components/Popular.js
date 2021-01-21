@@ -33,7 +33,7 @@ export default function Popular(props) {
 
     return (
         <React.Fragment>
-            <div></div>
+            <h1 className="main_title">Popular Movies</h1>
             <div className="cards">
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <div className="card" key={movie.id}>
