@@ -14,17 +14,21 @@ export default function Header(props) {
 
     const searchMovies = async (e) => {
         e.preventDefault();
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${query}&page=1&include_adult=false`;
-        
+        const pages = 7;
         try {
-            const res = await fetch(url);
-            const data  = await res.json();
-            console.log(data)
-            setMovies(data.results);
+            const all_data = []
+            for (let i = 1; i <= pages; i++) {
+              const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${query}&page=${i}&include_adult=false`;
+              const res = await fetch(url);
+              const data  = await res.json();
+              Array.prototype.push.apply(all_data, data.results);
+            }
+            setMovies(all_data);
         }catch(err){
             console.error(err);
         }
     }
+    
 
   return (
     <React.Fragment>
