@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header'
+import Popular from './components/Popular'
 
 class App extends Component {
   
   state = {
+    //const poster_w500 = "https://image.tmdb.org/t/p/w500/"
+    poster_w185: "https://image.tmdb.org/t/p/w185/",
     api_key: null
   };
 
@@ -27,7 +30,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header api_key={this.state.api_key}/>
+        <Header api_key={this.state.api_key} poster_w185={this.state.poster_w185}/>
+        <Popular api_key={this.state.api_key} poster_w185={this.state.poster_w185}/>
       </div>
     );
   }

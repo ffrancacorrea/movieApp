@@ -31,7 +31,7 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .search__form{
   display: flex;
