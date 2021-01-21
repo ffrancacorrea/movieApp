@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header'
-import Search from './components/Search'
 
 class App extends Component {
   
@@ -28,8 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Search api_key={this.state.api_key} />
+        <Header api_key={this.state.api_key}/>
       </div>
     );
   }
