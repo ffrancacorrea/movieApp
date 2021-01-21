@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
+import searchIcon from "../search-icon.svg"
 
 export default function Search(props) {
     const api_key = props.api_key;
@@ -28,12 +29,12 @@ export default function Search(props) {
 
     return (
         <React.Fragment>
-            <form className="form" onSubmit={searchMovies}>
-                <input className="input" type="text" name="query"
+            <form className="search__form" onSubmit={searchMovies}>
+                <input className="search__input" type="text" name="query"
                     placeholder="Search" ref={inputRef}
                     value={query} onChange={(e) => setQuery(e.target.value)}
                     />
-                <button className="button" type="submit">Search</button>
+                <button className="search__button" type="submit"> <img src={searchIcon} alt="search-icon"></img> </button>
             </form>
             <div className="cards">
                 {movies.filter(movie => movie.poster_path).map(movie => (

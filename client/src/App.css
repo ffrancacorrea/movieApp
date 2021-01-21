@@ -1,6 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/* Remove the chrome autocomplete color and background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgb(19, 19, 19) inset !important;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,9 +24,33 @@ body{
   text-align: center;
   background-color: rgb(19, 19, 19);
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
 }
 .main_title{
   color: white;
+}
+.search__form{
+  display: flex;
+  border: 3px solid rgb(177, 0, 0);
+  border-radius: 2rem;
+  width: 20rem;
+  flex-direction: row;
+}
+
+.search__input{
+  margin-left: 10px;
+  width: 100%;
+  color: white;
+  border: none;
+  background: none;
+  outline: none;
+}
+.search__button{
+  border: 1px solid rgb(177, 0, 0);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background-color: rgb(177, 0, 0);
 }
 .cards{
   margin: 50px;
