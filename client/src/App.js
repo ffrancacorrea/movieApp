@@ -30,6 +30,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header api_key={this.state.api_key} poster_w185={this.state.poster_w185}/>
+        <div className="wave_wrapper">
+        <div className="wave"></div>
+        </div>
       </div>
     );
   }

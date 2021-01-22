@@ -20,7 +20,7 @@ export default function Cards(props) {
                         src={`${poster_w185}${movie.poster_path}`}
                         alt="poster"/>
                         
-                    <div className="card__description">
+                    <div className="card__title">
                         <h2>{movie.original_title}</h2>
                     </div>
                 </div>

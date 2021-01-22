@@ -32,11 +32,12 @@ export default function Header(props) {
             console.error(err);
         }
     }
+
     
   return (
     <React.Fragment>
       <header className={ showPopular ? "navbar navbar__end" : "navbar" }  >
-      { !showPopular ? <button className="popular__btn" onClick={() => setPopular(true)}>Popular</button> : null }
+      { !showPopular ? <button className="popular__btn" onClick={() => setPopular(true)}>Popular Movies</button> : null }
         <form className="search__form" onSubmit={searchMovies}>
             <input className="search__input" type="text" name="query"
                     placeholder="Search" ref={inputRef}
